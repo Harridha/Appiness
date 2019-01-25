@@ -1,0 +1,26 @@
+<h2>User Profile</h2>
+  <div class="col-md-3 offset-7">
+    <button class="btn btn-primary" (click)="logOut()">Log Out</button>
+  </div>
+<div class="col-md-12 form">
+  <div class="row">
+    <label>Username:</label>
+    <label class="ml-3">{{loggedInUser.userName}}</label>
+  </div>
+  <div class="row">
+    <label>Name:</label>
+    <label class="ml-3">{{loggedInUser.name}}</label>
+  </div>
+  <div class="row">
+    <label>Email:</label>  
+    <label class="ml-3">{{loggedInUser.email}}</label>
+  </div>
+  <div class="row">
+    <label>Ph Number:</label>  
+    <label class="ml-3">{{loggedInUser.phone}}</label>
+  </div>
+  <div class="row">
+    <label>Address:</label>
+    <label class="ml-3">{{loggedInUser.address}}</label>
+  </div>
+</div>

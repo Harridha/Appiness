@@ -1,0 +1,39 @@
+<div class="form">
+  <h2 style="font-family: serif">SignUp Form</h2>
+  <form class="mt-3" [formGroup]="signUpForm" (ngSubmit)="submitForm()">
+    <span *ngIf="error" class="text text-danger">{{error}}</span>
+    <div class="row col-md-12 offset-3">
+      <label class="col-form-label align-left">Username:</label>  
+      <input class="form-control align-left col-md-5 ml-2" type="text" placeholder="Username" name="userName" formControlName="userName" required required />
+      <!-- <span *ngIf="signUpFormErrors.required">Please enter UserName</span> -->
+    </div>
+    <div class="row col-md-12 offset-3">
+      <label class="col-form-label align-left">Name:</label>  
+      <input class="form-control align-left col-md-5 ml-2" type="text" placeholder="Name" name="name" formControlName="name" required />
+    </div>
+    <div class="row col-md-12 offset-3">
+        <label class="col-form-label align-left">Email:</label>  
+        <input class="form-control align-left col-md-5 ml-2" type="email" placeholder="email" name="email" formControlName="email" required />
+      </div>
+    <div class="row col-md-12 offset-3">
+      <label class="col-form-label align-left">Password:</label>  
+      <input class="form-control align-left col-md-5 ml-2" type="password" placeholder="Password" formControlName="password" required />
+    </div>
+    <div class="row col-md-12 offset-3">
+      <label class="col-form-label align-left">Confirm password:</label>  
+      <input class="form-control align-left col-md-5 ml-2" type="password" placeholder="Confirm Password" formControlName="confirmPassword" required />
+    </div>
+    <div class="row col-md-12 offset-3">
+      <label class="col-form-label align-left">Ph Number:</label>  
+      <input class="form-control align-left col-md-5 ml-2" type="text" formControlName="phone" required />
+    </div>
+    <div class="row col-md-12 offset-3">
+      <label class="col-form-label align-left">Address:</label>
+      <textarea class="form-control align-left col-md-5 ml-2" formControlName="address"></textarea>
+    </div>
+    <div class="row col-md-12 offset-3">
+      <button class="btn btn-primary" type="submit" [disabled]="! signUpForm?.valid" title="Fill all the fields">Submit</button>
+      <button class="btn btn-default" (click)="cancelSignUp()">Cancel</button>
+    </div>
+  </form>
+</div>

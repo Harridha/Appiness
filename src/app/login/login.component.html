@@ -1,0 +1,30 @@
+<div class="form">
+  <h2 style="font-family: serif">Login Form</h2>
+
+  <div *ngIf="error" class="error">
+    {{error}}
+  </div>
+
+  <form class="mt-3" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <div class="row col-md-12 offset-3">
+      <label class="col-form-label align-left">Username:</label>  
+      <input class="form-control align-left col-md-5 ml-2" type="text" placeholder="Username or Email or number" formControlName="userName" />
+      <!-- <span *ngIf="! validateCreds.isValidUsername" class="text text-danger col-md-4">
+        The username or email address or phone number that you've entered doesn't match any account. 
+        If you donot have an account please Sign up
+      </span> -->
+    </div>
+    <div class="row col-md-12 offset-3 mt-3">
+      <label class="col-form-label align-left">Password:</label>
+      <input class="form-control align-left col-md-5 ml-3" type="password" placeholder="Password" formControlName="password" />
+      <!-- <span *ngIf="! validateCreds.isPasswordMatched" class="text text-danger">
+        The password that you've entered is incorrect.
+      </span> -->
+    </div>
+
+    <div class="col-md-12 mt-3">
+      <button class="btn btn-primary" type="submit" [disabled]="loginForm.invalid">Login</button>
+    </div>
+    Do not have an account?<a [routerLink]="['/signUp']"> Sign Up?</a>
+  </form>
+</div>

@@ -1,0 +1,14 @@
+.align-left {
+    float: left
+}
+
+.form {
+    position: relative;
+    display: inline-block;
+    margin-top: 15%;
+    width: 55%;
+}
+
+.error {
+    color: red
+}
